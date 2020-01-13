@@ -1,0 +1,10 @@
+
+.Todo {
+    color: green;
+    
+}
+
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
