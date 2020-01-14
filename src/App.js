@@ -5,7 +5,7 @@ import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
 import './components/TodoComponents/Todo.css';
-import { throwStatement } from '@babel/types';
+// import { throwStatement } from '@babel/types';
 
 const tasks = [
 
@@ -21,6 +21,9 @@ const tasks = [
 }
 ];
 
+// localStorage.setItem('tasks', JSON.stringify(tasks))
+// let json = JSON.stringify(tasks);
+// alert(JSON.stringify(json))
 
 class App extends Component {
   // you will need a place to store your state in this component.
@@ -48,6 +51,7 @@ toggleCompleted = id => {
   this.setState ({
     todoList: newtodoList
   });
+  // localStorage.setItem('todoList', JSON.stringify(newtodoList))
 };
 
 addTask = taskName => {
@@ -59,7 +63,9 @@ addTask = taskName => {
 
   this.setState({
     todoList: [...this.state.todoList, newTask]
+    
   });
+  localStorage.setItem('todoList', JSON.stringify(newTask))
 };
 
 deleteTask = () => {
